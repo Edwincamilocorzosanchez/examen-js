@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Momentum - Tablero Kanban</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Momentum - Tablero Kanban</h1>
+    <div id="user-actions">
+      <button id="login-btn">Iniciar sesión</button>
+      <button id="register-btn">Registrarse</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="kanban-board">
+      <div class="column" data-column="pendientes">
+        <h2>Pendientes</h2>
+        <div class="task-list" id="pendientes"></div>
+      </div>
+      <div class="column" data-column="en-progreso">
+        <h2>En Progreso</h2>
+        <div class="task-list" id="en-progreso"></div>
+      </div>
+      <div class="column" data-column="completadas">
+        <h2>Completadas</h2>
+        <div class="task-list" id="completadas"></div>
+      </div>
+    </section>
+    <button id="add-task-btn">+ Nueva Tarea</button>
+  </main>
+
+
+  <div class="modal hidden" id="task-modal">
+    <form id="task-form">
+      <h3 id="modal-title">Nueva Tarea</h3>
+      <input type="text" id="task-title" placeholder="Título" required />
+      <textarea id="task-desc" placeholder="Descripción" required></textarea>
+      <input type="date" id="task-start" required />
+      <input type="date" id="task-end" required />
+      <select id="task-column">
+        <option value="pendientes">Pendientes</option>
+        <option value="en-progreso">En Progreso</option>
+        <option value="completadas">Completadas</option>
+      </select>
+      <input type="url" id="task-img" placeholder="URL de imagen (opcional)" />
+      <div class="form-actions">
+        <button type="submit">Guardar</button>
+        <button type="button" id="cancel-task">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
